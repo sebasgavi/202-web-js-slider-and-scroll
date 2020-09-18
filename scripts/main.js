@@ -26,3 +26,38 @@ function handleScroll () {
   console.log('scroll', window.scrollY);
 }
 window.addEventListener('scroll', handleScroll);
+
+
+
+
+const galleryImg = document.querySelector('.gallery__image');
+const galleryThumbs = document.querySelectorAll('.gallery__thumbs img');
+const galleryClose = document.querySelector('.gallery__close');
+const galleryCont = document.querySelector('.gallery__cont');
+
+function galleryHandle (event) {
+  const src = event.target.getAttribute('src');
+  galleryImg.setAttribute('src', src);
+  galleryCont.classList.remove('gallery__cont--hidden');
+  console.log('click', src);
+}
+galleryThumbs.forEach(function (elem, index) {
+  elem.addEventListener('click', galleryHandle);
+});
+
+function galleryCloseHandle () {
+  galleryCont.classList.add('gallery__cont--hidden');
+}
+galleryClose.addEventListener('click', galleryCloseHandle);
+
+
+
+
+const carrousel = document.querySelector('.carrousel');
+const carrouselStripe = document.querySelector('.carrousel__stripe');
+
+carrousel.addEventListener('click', function () {
+  const width = carrousel.clientWidth;
+  carrouselStripe.style.transform = 'translate(-' + width + 'px, 0px)';
+  console.log();
+});

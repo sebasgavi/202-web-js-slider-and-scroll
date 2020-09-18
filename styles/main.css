@@ -277,6 +277,62 @@ input[type=button] {
   width: 400px;
 }
 
+.gallery {
+  margin: 20px auto;
+  width: 700px;
+}
+
+.gallery__thumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gallery__thumbs img {
+  width: 25%;
+  padding: 10px;
+}
+
+.gallery__thumbs img:hover {
+  opacity: .7;
+  cursor: pointer;
+  border: 3px solid cadetblue;
+}
+
+.gallery__cont {
+  position: relative;
+}
+
+.gallery__cont--hidden {
+  display: none;
+}
+
+.gallery__image {
+  width: 100%;
+  padding: 10px;
+}
+
+.gallery__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.carrousel {
+  width: 540px;
+  overflow: hidden;
+}
+
+.carrousel__stripe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform .6s ease;
+  transition: -webkit-transform .6s ease;
+  transition: transform .6s ease;
+  transition: transform .6s ease, -webkit-transform .6s ease;
+}
+
 h2 {
   font-size: 30px;
   margin: 10px 0;

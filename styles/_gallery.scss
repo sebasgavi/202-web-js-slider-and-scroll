@@ -1,0 +1,40 @@
+
+.gallery {
+  margin: 20px auto;
+  width: 700px;
+
+  &__thumbs {
+    display: flex;
+
+    img {
+      width: 25%;
+      padding: 10px;
+
+      &:hover {
+        opacity: .7;
+        cursor: pointer;
+        border: 3px solid cadetblue;
+      }
+    }
+  }
+
+  &__cont {
+    position: relative;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    padding: 10px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+}
