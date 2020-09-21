@@ -73,3 +73,31 @@ carrouselSlider.addEventListener('input', function() {
   const value = carrouselSlider.value;
   carrouselStripe.style.transform = 'translate(-' + (width * value) + 'px, 0px)';
 });
+
+
+
+
+const ratingStars = document.querySelectorAll('.rating__star');
+ratingStars.forEach(function (elem, index) {
+  console.log(elem);
+
+  elem.addEventListener('click', function() {
+
+    /* ratingStars.forEach(function (star, i) {
+      if(i <= index) {
+        star.classList.add('rating__star--filled');
+      } else {
+        star.classList.remove('rating__star--filled');
+      }
+    }); */
+
+    for(let i = 0; i < ratingStars.length; i++) {
+      if(i <= index) {
+        ratingStars[i].classList.add('rating__star--filled');
+      } else {
+        ratingStars[i].classList.remove('rating__star--filled');
+      }
+    }
+
+  });
+});

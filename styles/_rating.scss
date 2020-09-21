@@ -1,0 +1,13 @@
+.rating {
+  display: flex;
+  width: 200px;
+
+  &__star {
+    width: 20%;
+    opacity: .4;
+
+    &--filled {
+      opacity: 1;
+    }
+  }
+}
