@@ -55,9 +55,21 @@ galleryClose.addEventListener('click', galleryCloseHandle);
 
 const carrousel = document.querySelector('.carrousel');
 const carrouselStripe = document.querySelector('.carrousel__stripe');
+let current = 0;
 
 carrousel.addEventListener('click', function () {
+  current++;
+  if(current >= carrouselStripe.children.length) {
+    current = 0;
+  }
   const width = carrousel.clientWidth;
-  carrouselStripe.style.transform = 'translate(-' + width + 'px, 0px)';
-  console.log();
+  carrouselStripe.style.transform = 'translate(-' + (width * current) + 'px, 0px)';
+});
+
+const carrouselSlider = document.querySelector('.carrousel__slider');
+carrouselSlider.setAttribute('max', carrouselStripe.children.length - 1);
+carrouselSlider.addEventListener('input', function() {
+  const width = carrousel.clientWidth;
+  const value = carrouselSlider.value;
+  carrouselStripe.style.transform = 'translate(-' + (width * value) + 'px, 0px)';
 });
