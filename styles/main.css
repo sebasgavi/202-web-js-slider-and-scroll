@@ -362,6 +362,6 @@ body {
 .catbg {
   height: 200px;
   width: 300px;
-  background-image: url(/images/download.jpg);
+  background-image: url(../images/download.jpg);
 }
 /*# sourceMappingURL=main.css.map */
