@@ -57,14 +57,18 @@ const carrousel = document.querySelector('.carrousel');
 const carrouselStripe = document.querySelector('.carrousel__stripe');
 let current = 0;
 
-carrousel.addEventListener('click', function () {
+function handleNextSlide () {
   current++;
   if(current >= carrouselStripe.children.length) {
     current = 0;
   }
   const width = carrousel.clientWidth;
   carrouselStripe.style.transform = 'translate(-' + (width * current) + 'px, 0px)';
-});
+}
+
+carrousel.addEventListener('click', handleNextSlide);
+
+setInterval(handleNextSlide, 1000);
 
 const carrouselSlider = document.querySelector('.carrousel__slider');
 carrouselSlider.setAttribute('max', carrouselStripe.children.length - 1);
